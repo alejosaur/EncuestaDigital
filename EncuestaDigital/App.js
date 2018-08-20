@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { Button, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import DatePicker from 'react-native-datepicker'
 
@@ -7,49 +7,86 @@ class HomeScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { textEncuestador: '' ,  textConsecutivo: '' ,date: new Date()};
   }
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <DatePicker
-          style={{width: 200}}
-          date={this.state.date}
-          mode="date"
-          placeholder="select date"
-          format="YYYY-MM-DD"
-          minDate="2015-05-01"
-          maxDate="2125-06-01"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          customStyles={{
-            dateIcon: {
-              position: 'absolute',
-              left: 0,
-              top: 4,
-              marginLeft: 0
-            },
-            dateInput: {
-              marginLeft: 36
-            }
-            // ... You can check the source to find the other keys.
-          }}
-          onDateChange={(date) => {this.setState({date: new date()})}}
-      />
+      <View style={styles.cuerpo} >
+        <View style={styles.lateral}>
+          <View style={styles.cuerpo} >
 
-        <TextInput
-          style={{height: 40, width: 120                                                                                                                                                                                                                                                                                                                                          , borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          underlineColorAndroid={'transparent'}
-          value={this.state.text}
-        />
-        <TextInput
-          style={{height: 40, width: 120, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          underlineColorAndroid={'transparent'}
-          value={this.state.text}
-        />
+            <View style={styles.lateral}>
+              <Text>
+                Fecha:
+              </Text>
+              <TextInput
+                style={styles.phantomtextbox}
+                onChangeText={(text) => this.setState({text})}
+                underlineColorAndroid={'transparent'}
+                value={this.state.text}
+              />
+            </View>
+
+            <View style={styles.lateral}>
+              <Text>
+                Encuestador:
+              </Text>
+              <TextInput
+                style={styles.phantomtextbox}
+                onChangeText={(text) => this.setState({text})}
+                underlineColorAndroid={'transparent'}
+                value={this.state.text}
+              />
+            </View>
+
+            <View style={styles.lateral}>
+              <Text>
+                Consecutivo:
+              </Text>
+              <TextInput
+                style={styles.phantomtextbox}
+                onChangeText={(text) => this.setState({text})}
+                underlineColorAndroid={'transparent'}
+                value={this.state.text}
+              />
+            </View>
+
+          </View>
+
+          <View style={styles.cuerpo} >
+
+            <DatePicker
+              style={styles.datepicker}
+              date={this.state.date}
+              mode="date"
+              placeholder="select date"
+              format="YYYY-MM-DD"
+              minDate="2015-05-01"
+              maxDate="2125-06-01"
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"
+              showIcon={false}
+              onDateChange={(date) => {this.setState({date: date})}}
+            />
+
+            <TextInput
+              style={styles.textbox}
+              onChangeText={(textEncuestador) => this.setState({textEncuestador})}
+              underlineColorAndroid={'transparent'}
+              value={this.state.textEncuestador}
+            />
+
+            <TextInput
+              style={styles.textbox}
+              onChangeText={(textConsecutivo) => this.setState({textConsecutivo})}
+              underlineColorAndroid={'transparent'}
+              value={this.state.textConsecutivo}
+            />
+
+          </View>
+        </View>
+
         <Button
           title="Continuar"
           onPress={() => {
@@ -60,7 +97,9 @@ class HomeScreen extends React.Component {
             });
           }}
         />
+
       </View>
+
     );
   }
 }
@@ -91,9 +130,45 @@ const RootStack = createStackNavigator(
     Encuesta: EncuestaScreen,
   },
   {
+    headerMode: 'none',
     initialRouteName: 'Home',
   }
 );
+
+const styles = StyleSheet.create({
+  cuerpo: {
+    margin: 10,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  lateral: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  textbox: {
+    height: 40,
+    width: 160,
+    borderColor: 'gray',
+    borderWidth: 1,
+    margin: 5,
+    textAlign: 'center'
+  },
+  datepicker: {
+    height: 40,
+    width: 160,
+    borderColor: 'gray',
+    borderWidth: 1,
+    margin: 5
+  },
+  phantomtextbox: {
+    height: 40,
+    width: 0,
+    borderColor: 'gray',
+    borderWidth: 0,
+    margin: 5
+  }
+});
 
 export default class App extends React.Component {
   render() {
