@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRegistry, Button, View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import {AppRegistry, Button, View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Picker } from 'react-native';
 import { createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import DatePicker from 'react-native-datepicker'
 import DropdownMenu from 'react-native-dropdown-menu';
@@ -118,71 +118,64 @@ class EncuestaScreen extends React.Component {
         const { navigation } = this.props;
         const itemId = navigation.getParam('itemId', 'NO-ID');
         const otherParam = navigation.getParam('otherParam', 'some default value');
-        var data = [["C", "Java", "JavaScript", "PHP", "Python", "Ruby", "Swift", "Objective-C"]];
         return (
 
             <View style={styles.cuerpo}>
-                <Text>itemId: {JSON.stringify(itemId)}</Text>
-                <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-                <Button
-                    title="Go back"
-                    onPress={() => this.props.navigation.goBack()}
-                />
-
-                <View style={{flex: 1}}>
-                    <View style={{height: 64}} />
-                    <DropdownMenu
-                        style={{flex: 1}}
-                        bgColor={'white'}
-                        tintColor={'#666666'}
-                        activityTintColor={'green'}
-                        handler={(selection, row) => this.setState({menu: data[selection][row]})}
-                        data={data}
-                    >
-
-                        <View style={{flex: 1}}>
-                            <Text>
-                                {this.state.menu} is the best language in the world
-                            </Text>
-                        </View>
-
-                    </DropdownMenu>
-                </View>
 
                 <ScrollView vertical={true}>
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "red"}}>
+
+                    <Text>itemId: {JSON.stringify(itemId)}</Text>
+                    <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+                    <Button
+                        title="Go back"
+                        onPress={() => this.props.navigation.goBack()}
+                    />
+
+                    <View style={{height: 64}} />
+
+                    <Picker
+                        selectedValue={this.state.language}
+                        style={{ height: 50, width: 100 }}
+                        onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+                        <Picker.Item label="Java" value="java" />
+                        <Picker.Item label="JavaScript" value="js" />
+                    </Picker>
+
+                    <Text style = {styles.text}>{this.state.language}</Text>
+
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is a text in a scrollView
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "green"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is second line
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "blue"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is 3rd line
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "red"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is a text in a scrollView
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "green"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is second line
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "yellow"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is 3rd line
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "red"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is a text in a scrollView
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "green"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is second line
                     </Text>
 
-                    <Text style={{fontSize: 30,padding: 20,backgroundColor: "yellow"}}>
+                    <Text style={{fontSize: 30,padding: 20}}>
                         This is 3rd line
                     </Text>
                 </ScrollView>
