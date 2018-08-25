@@ -7,43 +7,6 @@ import DropdownMenu from 'react-native-dropdown-menu';
 
 class HomeScreen extends React.Component {
 
-<<<<<<< HEAD
-  constructor(props) {
-    super(props);
-    this.state = { textEncuestador: '' ,  textVisita: '' ,date: new Date()};
-  }
-
-  render() {
-    
-    return (
-      <View style={styles.cuerpo} >
-        <View style={styles.lateral}>
-          <View style={styles.cuerpo} >
-
-            <View style={styles.lateral}>
-              <Text>
-                Fecha:
-              </Text>
-              <TextInput
-                style={styles.phantomtextbox}
-                onChangeText={(text) => this.setState({text})}
-                underlineColorAndroid={'transparent'}
-                value={this.state.text}
-              />
-            </View>
-
-            <View style={styles.lateral}>
-              <Text>
-                No. de Visita:
-              </Text>
-              <TextInput
-                style={styles.phantomtextbox}
-                onChangeText={(text) => this.setState({text})}
-                underlineColorAndroid={'transparent'}
-                value={this.state.text}
-              />
-            </View>
-=======
     constructor(props) {
         super(props);
         this.state = { textEncuestador: 'Registre el nombre del encuestador' ,  textVisita: '' ,date: new Date()};
@@ -137,68 +100,11 @@ class HomeScreen extends React.Component {
                         });
                     }}
                 />
->>>>>>> dropdownTest
 
             </View>
 
-<<<<<<< HEAD
-          </View>
-
-          <View style={styles.cuerpo} >
-
-            <DatePicker
-              style={styles.datepicker}
-              date={this.state.date}
-              mode="date"
-              placeholder="select date"
-              format="DD-MM-YYYY"
-              minDate="01-01-2010"
-              maxDate="31-12-2100"
-              confirmBtnText="Confirm"
-              cancelBtnText="Cancel"
-              showIcon={false}
-              onDateChange={(date) => {this.setState({date: date})}}
-            />
-
-            <TextInput
-              style={styles.textbox}
-              placeholder='N° Consecutivo de la visita'
-              onChangeText={(textVisita) => this.setState({textVisita})}
-              underlineColorAndroid={'transparent'}
-              value={this.state.textVisita}
-            />
-
-            <TextInput
-              style={styles.textbox}
-              placeholder='Registre el nombre del encuestador'
-              onChangeText={(textEncuestador) => this.setState({textEncuestador})              }
-              underlineColorAndroid={'transparent'}
-              value={this.state.textEncuestador}
-            />
-
-          </View>
-        </View>
-   
-
-        <Button
-          title="Continuar"
-          onPress={() => {
-            /* 1. Navigate to the Encuesta route with params */
-            this.props.navigation.navigate('Encuesta', {
-              itemId: 86,
-              otherParam: this.state.textEncuestador,
-            });
-          }}
-        />
-
-      </View>
-
-    );
-  }
-=======
         );
     }
->>>>>>> dropdownTest
 }
 
 class EncuestaScreen extends React.Component {
