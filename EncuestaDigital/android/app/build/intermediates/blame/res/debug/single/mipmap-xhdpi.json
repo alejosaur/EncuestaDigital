@@ -2,5 +2,9 @@
     {
         "merged": "/home/alejandro/Documentos/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/home/alejandro/Documentos/EncuestaDigital/EncuestaDigital/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }
 ]

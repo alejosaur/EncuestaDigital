@@ -9,7 +9,7 @@ class HomeScreen extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { textEncuestador: 'Registre el nombre del encuestador' ,  textVisita: '' ,date: new Date()};
+        this.state = { textEncuestador: '' ,  textVisita: '' ,date: new Date()};
     }
 
     render() {
@@ -64,9 +64,9 @@ class HomeScreen extends React.Component {
                             date={this.state.date}
                             mode="date"
                             placeholder="select date"
-                            format="YYYY-MM-DD"
-                            minDate="2015-05-01"
-                            maxDate="2125-06-01"
+                            format="DD-MM-YYYY"
+                            minDate="01-01-2001"
+                            maxDate="31-12-2200"
                             confirmBtnText="Confirm"
                             cancelBtnText="Cancel"
                             showIcon={false}
@@ -75,6 +75,7 @@ class HomeScreen extends React.Component {
 
                         <TextInput
                             style={styles.textbox}
+                            placeholder='N° de Visita'
                             onChangeText={(textVisita) => this.setState({textVisita})}
                             underlineColorAndroid={'transparent'}
                             value={this.state.textVisita}
@@ -82,6 +83,7 @@ class HomeScreen extends React.Component {
 
                         <TextInput
                             style={styles.textbox}
+                            placeholder='Registre el nombre del encuestador'
                             onChangeText={(textEncuestador) => this.setState({textEncuestador})}
                             underlineColorAndroid={'transparent'}
                             value={this.state.textEncuestador}
@@ -139,6 +141,7 @@ class EncuestaScreen extends React.Component {
                         onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
                         <Picker.Item label="Java" value="java" />
                         <Picker.Item label="JavaScript" value="js" />
+                        <Picker.Item label="React Native" value="lol no" />
                     </Picker>
 
                     <Text style = {styles.text}>{this.state.language}</Text>
