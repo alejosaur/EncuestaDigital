@@ -12,12 +12,12 @@
         "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_btn_rating_star_off_mtrl_alpha.png"
     },
     {
-        "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_ic_ab_back_mtrl_am_alpha.png",
-        "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_ic_ab_back_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/alejandro/Documentos/GIT/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_textfield_activated_mtrl_alpha.9.png",
         "source": "/home/alejandro/Documentos/GIT/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_list_focused_holo.9.png",
@@ -52,12 +52,12 @@
         "source": "/home/alejandro/Documentos/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "/home/alejandro/Documentos/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_btn_switch_to_on_mtrl_00012.9.png",
         "source": "/home/alejandro/Documentos/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/home/federico/EncuestaDigital/EncuestaDigital/android/app/build/intermediates/res/merged/debug/drawable-xhdpi/abc_ic_voice_search_api_mtrl_alpha.png",

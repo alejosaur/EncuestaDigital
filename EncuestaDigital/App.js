@@ -18,48 +18,11 @@ class HomeScreen extends React.Component {
             <View style={styles.cuerpo} >
                 <Text style={styles.header}>CONTROL DE LA ENCUESTA</Text>
                 <View style={styles.lateral}>
-                    <View style={styles.cuerpo} >
+                    <View style={styles.cuerpoP2} >
 
-                        <View style={styles.lateral}>
-                            <Text>
-                                Fecha:
-                            </Text>
-                            <TextInput
-                                style={styles.phantomtextbox}
-                                onChangeText={(text) => this.setState({text})}
-                                underlineColorAndroid={'transparent'}
-                                value={this.state.text}
-                            />
-                        </View>
-
-                        <View style={styles.lateral}>
-                            <Text>
-                                No. de Visita:
-                            </Text>
-                            <TextInput
-                                style={styles.phantomtextbox}
-                                onChangeText={(text) => this.setState({text})}
-                                underlineColorAndroid={'transparent'}
-                                value={this.state.text}
-                            />
-                        </View>
-
-                        <View style={styles.lateral}>
-                            <Text>
-                                Encuestador:
-                            </Text>
-                            <TextInput
-                                style={styles.phantomtextbox}
-                                onChangeText={(text) => this.setState({text})}
-                                underlineColorAndroid={'transparent'}
-                                value={this.state.text}
-                            />
-                        </View>
-
-                    </View>
-
-                    <View style={styles.cuerpo} >
-
+                        <Text>
+                            Fecha:
+                        </Text>
                         <DatePicker
                             style={styles.datepicker}
                             date={this.state.date}
@@ -74,22 +37,29 @@ class HomeScreen extends React.Component {
                             onDateChange={(date) => {this.setState({date: date})}}
                         />
 
+                        <Text>
+                            No. de Visita:
+                        </Text>
                         <TextInput
-                            style={styles.textbox1}
-                            placeholder='N° de Visita'
+                            style={styles.textbox2}
+                            multiline={true}
+                            placeholder='Registre el número consecutivo de la visita durante la cual desarrolló la encuesta'
                             onChangeText={(textVisita) => this.setState({textVisita})}
                             underlineColorAndroid={'transparent'}
                             value={this.state.textVisita}
                         />
 
+                        <Text>
+                            Encuestador:
+                        </Text>
                         <TextInput
                             style={styles.textbox1}
-                            placeholder='Registre el nombre ssadel encuestador'
+                            multiline={true}
+                            placeholder='Registre el nombre del encuestador'
                             onChangeText={(textEncuestador) => this.setState({textEncuestador})}
                             underlineColorAndroid={'transparent'}
                             value={this.state.textEncuestador}
                         />
-
                     </View>
                 </View>
 
@@ -113,11 +83,12 @@ class HomeScreen extends React.Component {
 class EncuestaScreen extends React.Component {
     constructor(props) {
         super(props);
-    	this.state = {menu:'', EG1:'',EG2:'', EG3:'', EG4:'', EG5:'', EG6:'' , EG7:'' , EG8:'' , EG8_1:'', EG9:''};
+    	this.state = {menu:'', EG1:'',EG2:'', EG3:'', EG4:'', EG5:'', EG6:'' , EG7:'' , EG8:'' , EG8_1:'', EG9:'', EG10:'',
+                             EG11:'',EG12:'', EG13:'', EG14:'', EG15:'', EG15_1:'', EG16:'' , EG17:'' , EG18:'', EG19:'', EG20:''};
   	}
 
     render() {
-        /* 2. Get the param, provide a fallback value if not available */
+
         const { navigation } = this.props;
         const itemId = navigation.getParam('itemId', 'NO-ID');
         const otherParam = navigation.getParam('otherParam', 'some default value');
@@ -280,12 +251,143 @@ class EncuestaScreen extends React.Component {
                                 <Picker.Item label="Otro ¿Cuál?" value="VT" />
                             </Picker>
 
-                        </View>
+                            <Text>
+                                10. Edad del productor:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                keyboardType = 'numeric'
+                                placeholder='Registre la edad en valores numéricos'
+                                onChangeText={(EG10) => this.setState({EG10})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG10}
+                            />
 
+                            <Text>
+                                11. Genero del productor:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG11}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG11: itemValue})}>
+                                <Picker.Item label="Masculino" value="M" />
+                                <Picker.Item label="Femenino" value="F" />
+                            </Picker>
+
+                            <Text>
+                                12. ¿Hace cuantos años y/o meses  reside en la zona?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                keyboardType = 'numeric'
+                                placeholder='Registre el dato con valores numéricos'
+                                onChangeText={(EG12) => this.setState({EG12})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG12}
+                            />
+
+                            <Text>
+                                13. ¿Hace cuantos años y/o meses se dedica a esta actividad?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                keyboardType = 'numeric'
+                                placeholder='Registre el valor en años y meses'
+                                onChangeText={(EG13) => this.setState({EG13})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG13}
+                            />
+
+                            <Text>
+                                14. ¿Usted está organizado como persona natural o jurídica?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG14}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG14: itemValue})}>
+                                <Picker.Item label="Natural" value="Natural" />
+                                <Picker.Item label="Jurídica" value="Juridica" />
+                            </Picker>
+
+                            <Text>
+                                15. ¿Ha sido víctima del desplazamiento forzado?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG15}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG15: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                15.1. ¿Cuál fue la causa del desplazamiento?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG15_1}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG15_1: itemValue})}>
+                                <Picker.Item label="Conflicto armado" value="conflicto" />
+                                <Picker.Item label="Ambiental" value="ambiental" />
+                                <Picker.Item label="Económica" value="economica" />
+                            </Picker>
+
+                            <Text>
+                                16. ¿Es usted desmovilizado de algún grupo armado?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG16}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG16: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                        </View>
                     </View>
 
+
+
+                    <Button
+                        title="Continuar"
+                        onPress={() => {
+                            /* 1. Navigate to the Encuesta UPAC route with params */
+                            this.props.navigation.navigate('EUPAC', {
+
+                            });
+                        }}
+                    />
                 </ScrollView>
             </View>
+        );
+    }
+}
+
+class ThirdScreen extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    render() {
+        const { navigation } = this.props;
+        return (
+          <View style={styles.cuerpo}>
+              <ScrollView vertical={true}>
+                  <Button
+                      title="Regresar"
+                      onPress={() => this.props.navigation.goBack()}
+                  />
+                <Text style={styles.header}>INFORMACION GENERAL DE LA UNIDAD DE PRODUCCION ACUICOLA UPAC</Text>
+                  <View style={styles.lateral}>
+                      <View style={styles.cuerpoP2} >
+
+
+                      </View>
+                  </View>
+              </ScrollView>
+          </View>
         );
     }
 }
@@ -294,6 +396,7 @@ const RootStack = createStackNavigator(
     {
         Home: HomeScreen,
         Encuesta: EncuestaScreen,
+        EUPAC: ThirdScreen
     },
     {
         headerMode: 'none',
@@ -327,6 +430,14 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     textbox2: {
+        height: 60,
+        width: '98%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        margin: 5,
+        textAlign: 'center'
+    },
+    textbox3: {
         height: 80,
         width: '98%',
         borderColor: 'gray',
