@@ -75,7 +75,7 @@ class HomeScreen extends React.Component {
                         />
 
                         <TextInput
-                            style={styles.textbox}
+                            style={styles.textbox1}
                             placeholder='N° de Visita'
                             onChangeText={(textVisita) => this.setState({textVisita})}
                             underlineColorAndroid={'transparent'}
@@ -83,8 +83,8 @@ class HomeScreen extends React.Component {
                         />
 
                         <TextInput
-                            style={styles.textbox}
-                            placeholder='Registre el nombre del encuestador'
+                            style={styles.textbox1}
+                            placeholder='Registre el nombre ssadel encuestador'
                             onChangeText={(textEncuestador) => this.setState({textEncuestador})}
                             underlineColorAndroid={'transparent'}
                             value={this.state.textEncuestador}
@@ -148,105 +148,61 @@ class EncuestaScreen extends React.Component {
                     <Text style={styles.header}>UBICACIÓN DE LA UNIDAD DE PRODUCCIÓN</Text>
 
                     <View style={styles.lateral}>
-                        <View style={styles.cuerpo} >
-                            <View style={styles.lateral}>
-                                <Text>
+                        <View style={styles.cuerpoP2} >
+                            <Text>
                                 1. Nombre del departamento:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                2. Nombre del municipio:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                3. Nombre del resguardo indígena:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                4. Nombre del corregimiento, vereda o barrio:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                5. Coordenadas obtenidas con el GPS:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                        </View>
-
-                        <View style={styles.cuerpo} >
-
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox1}
+                                multiline={true}
                                 placeholder='Registre el nombre del departamento'
                                 onChangeText={(EG1) => this.setState({EG1})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG1}
                             />
 
+                            <Text>
+                                2. Nombre del municipio:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox1}
+                                multiline={true}
                                 placeholder='Registre el nombre del municipio'
                                 onChangeText={(EG2) => this.setState({EG2})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG2}
                             />
 
+                            <Text>
+                                3. Nombre del resguardo indígena:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
-                                placeholder='Registre el nombre del resguardo indígenar'
+                                style={styles.textbox1}
+                                multiline={true}
+                                placeholder='Registre el nombre del resguardo indígena'
                                 onChangeText={(EG3) => this.setState({EG3})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG3}
                             />
 
+                            <Text>
+                                4. Nombre del corregimiento, vereda o barrio:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox2}
+                                multiline={true}
                                 placeholder='Registre el nombre del corregimiento, vereda o barrio'
                                 onChangeText={(EG4) => this.setState({EG4})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG4}
                             />
 
+                            <Text>
+                                5. Coordenadas obtenidas con el GPS:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox2}
+                                multiline={true}
                                 placeholder='Registre las coordenadas obtenidas con el GPS según el formato grados decimales: N:98,2346567 W:09,98546'
                                 onChangeText={(EG5) => this.setState({EG5})}
                                 underlineColorAndroid={'transparent'}
@@ -254,95 +210,44 @@ class EncuestaScreen extends React.Component {
                             />
 
                         </View>
+
                     </View>
 
                     <Text style={styles.header}>INFORMACION DEL PRODUCTOR (ACUICULTOR / PESCADOR ARTESANAL)</Text>
 
                     <View style={styles.lateral}>
-                        <View style={styles.cuerpo} >
-                            <View style={styles.lateral}>
-                                <Text>
+                        <View style={styles.cuerpoP2} >
+
+                            <Text>
                                 6. ¿Cuál es su nombre?:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                7. Número telefónico:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                8. ¿Cuál es su tipo de documento de identidad?:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                8.1. ¿Cuál es el número de su documento de identidad?:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                            <View style={styles.lateral}>
-                                <Text>
-                                9. ¿Pertenece usted a alguno de los siguientes grupos étnicos?:
-                                </Text>
-                                <TextInput
-                                    style={styles.phantomtextbox}
-                                    onChangeText={(text) => this.setState({text})}
-                                    underlineColorAndroid={'transparent'}
-                                    value={this.state.text}
-                                />
-                            </View>
-
-                        </View>
-
-                        <View style={styles.cuerpo} >
-
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox1}
+                                multiline={true}
                                 placeholder='Registre el nombre del encuestado (Productor)'
                                 onChangeText={(EG6) => this.setState({EG6})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG6}
                             />
 
+                            <Text>
+                                7. Número telefónico:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox1}
+                                multiline={true}
                                 placeholder='Registre el número telefónico'
                                 onChangeText={(EG7) => this.setState({EG7})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG7}
                             />
 
+                            <Text>
+                                8. ¿Cuál es su tipo de documento de identidad?:
+                            </Text>
                             <Picker
                                 selectedValue={this.state.EG8}
-                                style={{ height: 50, width: 150 }}
+                                style={styles.datepicker}
                                 onValueChange={(itemValue, itemIndex) => this.setState({EG8: itemValue})}>
                                 <Picker.Item label="Tarjeta de identidad" value="TI" />
                                 <Picker.Item label="Cédula de ciudadanía" value="CC" />
@@ -350,17 +255,24 @@ class EncuestaScreen extends React.Component {
                                 <Picker.Item label="Visa de trabajo" value="VT" />
                             </Picker>
 
+                            <Text>
+                                8.1. ¿Cuál es el número de su documento de identidad?:
+                            </Text>
                             <TextInput
-                                style={styles.textbox}
+                                style={styles.textbox1}
+                                multiline={true}
                                 placeholder='Registre el número'
                                 onChangeText={(EG8_1) => this.setState({EG8_1})}
                                 underlineColorAndroid={'transparent'}
                                 value={this.state.EG8_1}
                             />
 
+                            <Text>
+                                9. ¿Pertenece usted a alguno de los siguientes grupos étnicos?:
+                            </Text>
                             <Picker
                                 selectedValue={this.state.EG9}
-                                style={{ height: 50, width: 150 }}
+                                style={styles.datepicker}
                                 onValueChange={(itemValue, itemIndex) => this.setState({EG9: itemValue})}>
                                 <Picker.Item label="Afrocolombiano" value="TI" />
                                 <Picker.Item label="Indígena" value="CC" />
@@ -369,6 +281,7 @@ class EncuestaScreen extends React.Component {
                             </Picker>
 
                         </View>
+
                     </View>
 
                 </ScrollView>
@@ -395,13 +308,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    cuerpoP2: {
+        margin: 10,
+        flex: 1,
+        alignItems: 'flex-start',
+        justifyContent: 'center'
+    },
     lateral: {
         flexDirection: 'row',
         alignItems: 'center'
     },
-    textbox: {
+    textbox1: {
         height: 40,
-        width: 160,
+        width: '98%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        margin: 5,
+        textAlign: 'center'
+    },
+    textbox2: {
+        height: 80,
+        width: '98%',
         borderColor: 'gray',
         borderWidth: 1,
         margin: 5,
@@ -409,7 +336,7 @@ const styles = StyleSheet.create({
     },
     datepicker: {
         height: 40,
-        width: 160,
+        width: '98%',
         borderColor: 'gray',
         borderWidth: 1,
         margin: 5
