@@ -83,8 +83,10 @@ class HomeScreen extends React.Component {
 class EncuestaScreen extends React.Component {
     constructor(props) {
         super(props);
-    	this.state = {menu:'', EG1:'',EG2:'', EG3:'', EG4:'', EG5:'', EG6:'' , EG7:'' , EG8:'' , EG8_1:'', EG9:'', EG10:'',
-                             EG11:'',EG12:'', EG13:'', EG14:'', EG15:'', EG15_1:'', EG16:'' , EG17:'' , EG18:'', EG19:'', EG20:''};
+    	this.state = {menu:'', EG1:'',EG2:'', EG3:'', EG4:'', EG5:'', EG6:'' , EG7:'' , EG8:'' , EG8_1:'', EG9:'',
+                    EG10:'', EG11:'',EG12:'', EG13:'', EG14:'', EG15:'', EG15_1:'', EG16:'' , EG17:'' , EG18:'',
+                    EG19:'', EG19_1:'', EG19_2:'', EG19_3:'', EG19_4:'', EG19_5:'', EG19_6:'', EG19_7:'', EG19_8:'',
+                    EG20:''};
   	}
 
     render() {
@@ -264,7 +266,7 @@ class EncuestaScreen extends React.Component {
                             />
 
                             <Text>
-                                11. Genero del productor:
+                                11. Género del productor:
                             </Text>
                             <Picker
                                 selectedValue={this.state.EG11}
@@ -275,7 +277,7 @@ class EncuestaScreen extends React.Component {
                             </Picker>
 
                             <Text>
-                                12. ¿Hace cuantos años y/o meses  reside en la zona?:
+                                12. ¿Hace cuántos años y/o meses  reside en la zona?:
                             </Text>
                             <TextInput
                                 style={styles.textbox1}
@@ -342,6 +344,164 @@ class EncuestaScreen extends React.Component {
                                 <Picker.Item label="Sí" value="Si" />
                                 <Picker.Item label="No" value="No" />
                             </Picker>
+
+                        </View>
+                    </View>
+
+                    <Text style={styles.header}>SITUACIÓN DEMOGRÁFICA Y SOCIAL DEL GRUPO FAMILIAR DEL PRODUCTOR</Text>
+                    <Text style={styles.subheader}>Indique la composición de su grupo familiar bajo las siguientes preguntas</Text>
+
+                    <View style={styles.lateral}>
+                        <View style={styles.cuerpoP2} >
+                            <Text>
+                                17. ¿Cuántas personas componen su grupo familiar?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                keyboardType = 'numeric'
+                                placeholder='Registre el dato con valor numérico'
+                                onChangeText={(EG17) => this.setState({EG17})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG17}
+                            />
+
+                            <Text>
+                                18. ¿Quién es el /la jefe del hogar?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                multiline={true}
+                                placeholder='Registre el nombre del jefe del hogar'
+                                onChangeText={(EG18) => this.setState({EG18})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG18}
+                            />
+
+                            <Text>
+                                19. Indique su nombre:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                multiline={true}
+                                placeholder='Registre el nombre'
+                                onChangeText={(EG19) => this.setState({EG19})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG19}
+                            />
+
+                            <Text>
+                                19.1. ¿Cuál es su relación con el/la productor/a?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_1}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_1: itemValue})}>
+                                <Picker.Item label="Cónyuge" value="Conyuge" />
+                                <Picker.Item label="Hijo/a" value="Hijo/a" />
+                                <Picker.Item label="Yerno / Nuera" value="Yerno/nuera" />
+                                <Picker.Item label="Nieto/a, Bisnieto/a" value="Nieto/a, bisnieto/a" />
+                                <Picker.Item label="Padre o madre del cónyuge" value="Padre o madre del cónyuge" />
+                                <Picker.Item label="Otro pariente" value="Otro pariente" />
+                                <Picker.Item label="Otro,  persona no emparentada (Amigo)" value="Otro,  persona no emparentada (Amigo)" />
+                            </Picker>
+
+                            <Text>
+                                19.2. Género:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_2}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_2: itemValue})}>
+                                <Picker.Item label="Hombre" value="H" />
+                                <Picker.Item label="Mujer" value="M" />
+                            </Picker>
+
+                            <Text>
+                                19.3. ¿Cuántos años tiene?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox1}
+                                keyboardType = 'numeric'
+                                placeholder='Registre el dato con valor numérico'
+                                onChangeText={(EG19_3) => this.setState({EG19_3})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG19_3}
+                            />
+
+                            <Text>
+                                19.4. ¿Cuál es su estado civil?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_4}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_4: itemValue})}>
+                                <Picker.Item label="Soltero" value="Soltero" />
+                                <Picker.Item label="Casado" value="Casado" />
+                                <Picker.Item label="Unión Libre" value="Unión Libre" />
+                                <Picker.Item label="Separado" value="Separado" />
+                                <Picker.Item label="Divorciado" value="Divorciado" />
+                                <Picker.Item label="Viudo" value="Viudo" />
+                            </Picker>
+
+                            <Text>
+                                19.5. ¿Sabe leer y/o escribir?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_5}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_5: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                19.6. ¿Actualmente asiste a un centro educativo?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_6}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_6: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                19.7. ¿Cuál es el último grado de educación que estudio  y aprobó?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG19_7}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG19_7: itemValue})}>
+                                <Picker.Item label="Básica primaria (1° a 5°grado)" value="BP" />
+                                <Picker.Item label="Básica secundaria (6° a 9° grado)" value="BS" />
+                                <Picker.Item label="Media  (10° a 11° grado)" value="M" />
+                                <Picker.Item label="Técnico" value="Tico" />
+                                <Picker.Item label="Técnologo" value="Tlogo" />
+                                <Picker.Item label="Profesional pregrado" value="Pre" />
+                                <Picker.Item label="Postgrado" value="Post" />
+                                <Picker.Item label="Ninguno" value="N" />
+                            </Picker>
+
+                            <Text>
+                                19.8. ¿Cuál es su profesión?:
+                            </Text>
+                            <TextInput
+                                style={styles.textbox3}
+                                multiline={true}
+                                placeholder='Registre el tipo de profesión únicamente de las personas que aprobaron estudios Técnicos, Tecnológicos, Profesional pregrado, o Postgrados.'
+                                onChangeText={(EG19_8) => this.setState({EG19_8})}
+                                underlineColorAndroid={'transparent'}
+                                value={this.state.EG19_8}
+                            />
+
+                        </View>
+                    </View>
+
+                    <Text style={styles.header}>SITUACION LABORAL Y ECONÓMICA DEL GRUPO FAMILIAR DEL PRODUCTOR</Text>
+
+                    <View style={styles.lateral}>
+                        <View style={styles.cuerpoP2} >
+
 
                         </View>
                     </View>
@@ -464,6 +624,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 20,
         padding: 20,
+        textAlign: 'center'
+    },
+    subheader: {
+        color: 'black',
+        fontStyle: 'italic',
+        fontSize: 15,
+        padding: 15,
         textAlign: 'center'
     }
 });
