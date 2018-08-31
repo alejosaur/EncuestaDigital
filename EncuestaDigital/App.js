@@ -1,5 +1,6 @@
 import React from 'react';
 import {AppRegistry, Button, View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Picker } from 'react-native';
+import { CheckBox } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import DatePicker from 'react-native-datepicker';
 
@@ -84,7 +85,12 @@ class EncuestaScreen extends React.Component {
     	this.state = {menu:'', EG1:'',EG2:'', EG3:'', EG4:'', EG5:'', EG6:'' , EG7:'' , EG8:'' , EG8_1:'', EG9:'',
                     EG10:'', EG11:'',EG12:'', EG13:'', EG14:'', EG15:'', EG15_1:'', EG16:'' , EG17:'' , EG18:'', EG19:'', EG19_1:'',
                     EG19_2:'', EG19_3:'', EG19_4:'', EG19_5:'', EG19_6:'', EG19_7:'', EG19_8:'', EG20:'', EG20_1:'', EG20_2:'', EG20_3:'',
-                    EG21:'', EG21_1:'', EG22:'', EG23:'', EG24:'', EG25:'', EG26:'' , EG27:'' };
+                    EG21:'', EG21_1:'', EG22:'', EG23:'', EG24:'', EG25:'', EG26:'' , EG27a:false, EG27b:false, EG27c:false, EG27d:false,
+                    EG27e:false, EG27f:false, EG27g:false, EG27h:false, EG27i:false, EG27j:false, EG28:'', EG29:'', EG30:'', EG31:'',
+                    EG32:'', EG32_1:'', EG32_2:'', EG32_3:'', EG32_4:'', EG33:'', EG33_1:'', EG33_2:'', EG33_3:'', EG33_4:'', EG34:'',
+                    EG34_1:'', EG34_2:'', EG34_3:'', EG35:'', EG36:'', EG37:'', EG38:'', EG39:'', EG40:'', EG40_1:'', EG40_2:'', EG41:'',
+                    EG41_1:'', EG41_2a:false, EG41_2b:false, EG41_2c:false, EG41_2d:false, EG41_2e:false, EG41_2f:false, EG41_2g:false,
+                    EG41_2h:false, EG41_2i:false, EG41_3:'', EG41_4:'',  EG42:'', EG42_1:'', EG42_2:'', EG42_3:'', EG42_4:'', BOX:false };
     }
 
     render() {
@@ -105,15 +111,6 @@ class EncuestaScreen extends React.Component {
                     />
 
                     <View style={{height: 64}} />
-
-                    <Picker
-                        selectedValue={this.state.language}
-                        style={{ height: 50, width: 100 }}
-                        onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-                        <Picker.Item label="Java" value="java" />
-                        <Picker.Item label="JavaScript" value="js" />
-                        <Picker.Item label="React Native" value="lol no" />
-                    </Picker>
 
                     <Text style = {styles.text}>{this.state.language}</Text>
 
@@ -631,12 +628,76 @@ class EncuestaScreen extends React.Component {
                             <Text>
                                 27. De los siguientes servicios públicos y/o privados ¿Cuáles  tiene en su vivienda?:
                             </Text>
-                            <Picker
-                                selectedValue={this.state.EG27}
-                                style={styles.datepicker}
-                                onValueChange={(itemValue, itemIndex) => this.setState({EG27: itemValue})}>
-                                <Picker.Item label="IMPLEMENT MULTIPLE SELECTION" value="XYZ" />
-                            </Picker>
+                            <CheckBox
+                                center
+                                title='Acueducto'
+                                iconRight
+                                checked={this.state.EG27a}
+                                onPress={() => this.setState({EG27a: !this.state.EG27a})}
+                            />
+                            <CheckBox
+                                center
+                                title='Aseo'
+                                iconRight
+                                checked={this.state.EG27b}
+                                onPress={() => this.setState({EG27b: !this.state.EG27b})}
+                            />
+                            <CheckBox
+                                center
+                                title='Alcantarillado'
+                                iconRight
+                                checked={this.state.EG27c}
+                                onPress={() => this.setState({EG27c: !this.state.EG27c})}
+                            />
+                            <CheckBox
+                                center
+                                title='Pozo Séptico'
+                                iconRight
+                                checked={this.state.EG27d}
+                                onPress={() => this.setState({EG27d: !this.state.EG27d})}
+                            />
+                            <CheckBox
+                                center
+                                title='Letrina'
+                                iconRight
+                                checked={this.state.EG27e}
+                                onPress={() => this.setState({EG27e: !this.state.EG27e})}
+                            />
+                            <CheckBox
+                                center
+                                title='Electricidad'
+                                iconRight
+                                checked={this.state.EG27f}
+                                onPress={() => this.setState({EG27f: !this.state.EG27f})}
+                            />
+                            <CheckBox
+                                center
+                                title='Gas'
+                                iconRight
+                                checked={this.state.EG27g}
+                                onPress={() => this.setState({EG27g: !this.state.EG27g})}
+                            />
+                            <CheckBox
+                                center
+                                title='Teléfono fijo o movil'
+                                iconRight
+                                checked={this.state.EG27h}
+                                onPress={() => this.setState({EG27h: !this.state.EG27h})}
+                            />
+                            <CheckBox
+                                center
+                                title='Internet'
+                                iconRight
+                                checked={this.state.EG27i}
+                                onPress={() => this.setState({EG27i: !this.state.EG27i})}
+                            />
+                            <CheckBox
+                                center
+                                title='Otro, ¿Cuál?'
+                                iconRight
+                                checked={this.state.EG27j}
+                                onPress={() => this.setState({EG27j: !this.state.EG27j})}
+                            />
 
                             <Text style={styles.header}>SEGURIDAD ALIMENTARIA</Text>
                             <Text style={styles.subheader}>Indique la situación alimentaria de su grupo familiar de acuerdo con los siguientes ítems</Text>
@@ -674,7 +735,7 @@ class EncuestaScreen extends React.Component {
                                 <Picker.Item label="No" value="no" />
                             </Picker>
 
-                            <Text style={styles.header}>ACCESO A EDCUACIÓN</Text>
+                            <Text style={styles.header}>ACCESO A EDUCACIÓN</Text>
                             <Text style={styles.subheader}>Indique las condiciones de acceso a educación de acuerdo con los siguientes ítems</Text>
 
                             <Text>
@@ -995,7 +1056,7 @@ class EncuestaScreen extends React.Component {
                             </Picker>
 
                             <Text>
-                                41.2. ¿La asistencia técnica fue otorgada por?:
+                                41.1. ¿La asistencia técnica fue otorgada por?:
                             </Text>
                             <Picker
                                 selectedValue={this.state.EG40_1}
@@ -1005,6 +1066,159 @@ class EncuestaScreen extends React.Component {
                                 <Picker.Item label="ONG ¿Cuál?" value="ong" />
                                 <Picker.Item label="Asociaciones de productores" value="Asociaciones" />
                                 <Picker.Item label="Otros ¿Cuáles?" value="otro" />
+                            </Picker>
+
+                            <Text>
+                                41.2. ¿En cuál de los siguientes temas fue o es  asesorado/asistido?:
+                            </Text>
+                            <CheckBox
+                                center
+                                title='Gestión de la unidad de producción'
+                                iconRight
+                                checked={this.state.EG41_2a}
+                                onPress={() => this.setState({EG41_2a: !this.state.EG41_2a})}
+                            />
+                            <CheckBox
+                                center
+                                title='Uso de insumos fertilizantes y otroseo'
+                                iconRight
+                                checked={this.state.EG41_2b}
+                                onPress={() => this.setState({EG41_2b: !this.state.EG41_2b})}
+                            />
+                            <CheckBox
+                                center
+                                title='Crédito'
+                                iconRight
+                                checked={this.state.EG41_2c}
+                                onPress={() => this.setState({EG41_2c: !this.state.EG41_2c})}
+                            />
+                            <CheckBox
+                                center
+                                title='Tecnificación de la unidad de producción en todas las fases'
+                                iconRight
+                                checked={this.state.EG41_2d}
+                                onPress={() => this.setState({EG41_2d: !this.state.EG41_2d})}
+                            />
+                            <CheckBox
+                                center
+                                title='Salud animal'
+                                iconRight
+                                checked={this.state.EG41_2e}
+                                onPress={() => this.setState({EG41_2e: !this.state.EG41_2e})}
+                            />
+                            <CheckBox
+                                center
+                                title='Desarrollo sostenible '
+                                iconRight
+                                checked={this.state.EG41_2f}
+                                onPress={() => this.setState({EG41_2f: !this.state.EG41_2f})}
+                            />
+                            <CheckBox
+                                center
+                                title='Agremiación'
+                                iconRight
+                                checked={this.state.EG41_2g}
+                                onPress={() => this.setState({EG41_2g: !this.state.EG41_2g})}
+                            />
+                            <CheckBox
+                                center
+                                title='Comercialización'
+                                iconRight
+                                checked={this.state.EG41_2h}
+                                onPress={() => this.setState({EG41_2h: !this.state.EG41_2h})}
+                            />
+                            <CheckBox
+                                center
+                                title='Otro, ¿Cuál?'
+                                iconRight
+                                checked={this.state.EG41_2i}
+                                onPress={() => this.setState({EG41_2i: !this.state.EG41_2i})}
+                            />
+
+                            <Text>
+                                41.3. ¿Le sirvió la asesoría?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG41_3}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG41_3: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                41.4. ¿La asistencia técnica recibida fue?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG41_4}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG41_4: itemValue})}>
+                                <Picker.Item label="Gratis" value="Gratis" />
+                                <Picker.Item label="Pagada por el productor" value="Pagada" />
+                            </Picker>
+
+                            <Text style={styles.subheader}>Indique las condiciones de acceso a formación complementaria- educación no formal de acuerdo con los siguientes ítems</Text>
+
+                            <Text>
+                                42. ¿Ha asistido a algún taller, curso, seminario, capacitación, otros?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG42}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG42: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                41.1. ¿La formación complementaria fue otorgada por?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG42_1}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG42_1: itemValue})}>
+                                <Picker.Item label="Organizaciones gubernamentales" value="org. gubernamentales" />
+                                <Picker.Item label="ONG ¿Cuál?" value="ong" />
+                                <Picker.Item label="Asociaciones de productores" value="Asociaciones" />
+                                <Picker.Item label="Otros ¿Cuáles?" value="otro" />
+                            </Picker>
+
+                            <Text>
+                                42.2. ¿En cuál de las siguientes áreas recibió formación complementaria?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG42_2}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG42_2: itemValue})}>
+                                <Picker.Item label="Ambiental" value="ambiental" />
+                                <Picker.Item label="Empresarial" value="Empresarial" />
+                                <Picker.Item label="Productivo (acuícola)" value="acuicola" />
+                                <Picker.Item label="Productivo (pesquero)" value="pesquero" />
+                                <Picker.Item label="Tecnológico / innovación" value="tecnológico" />
+                                <Picker.Item label="Buenas prácticas de producción (Acuícola/Pesquera) " value="buenas practicas" />
+                                <Picker.Item label="Otros ¿Cuáles?" value="otro" />
+                            </Picker>
+
+                            <Text>
+                                42.3. ¿Ha asistido a algún taller, curso, seminario, capacitación, otros?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG42_3}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG42_3: itemValue})}>
+                                <Picker.Item label="Sí" value="Si" />
+                                <Picker.Item label="No" value="No" />
+                            </Picker>
+
+                            <Text>
+                                43.4. ¿La formación complementaria recibida fue?:
+                            </Text>
+                            <Picker
+                                selectedValue={this.state.EG42_4}
+                                style={styles.datepicker}
+                                onValueChange={(itemValue, itemIndex) => this.setState({EG42_4: itemValue})}>
+                                <Picker.Item label="Gratis" value="Gratis" />
+                                <Picker.Item label="Pagada por el productor" value="Pagada" />
                             </Picker>
 
                         </View>
